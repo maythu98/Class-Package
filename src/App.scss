@@ -1,0 +1,35 @@
+$title_color: #1b7a8c;
+
+/* Login */
+.login {
+  input {
+    border: none !important;
+    border-bottom: 2px solid #d9d2d2 !important;
+    border-radius: 0 !important;
+
+    &:focus,
+    &:active {
+      background-color: white;
+      border: none;
+      box-shadow: none;
+    }
+  }
+  input::selection {
+    background: white;
+  }
+}
+
+// package card
+.package-card {
+  .title {
+    color: $title_color;
+
+    span {
+      margin-top: 5px;
+      color: white;
+      padding: 1rem;
+      background-color: $title_color;
+      border-radius: 50%;
+    }
+  }
+}

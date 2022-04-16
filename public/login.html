@@ -1,0 +1,45 @@
+<div class="limiter">
+    <div class="container-login100" style="background-color: #1a68d3;
+    background-image: radial-gradient(ellipse at bottom,#1a68d3 5%,transparent 60%),linear-gradient(136deg,transparent,#71c7ee 290%),linear-gradient(115deg,#9d9af1,transparent 40%),linear-gradient(180deg,transparent 0,#1a68d3 70%),radial-gradient(ellipse at -70% -180%,transparent 80%,#71c7ee 0),radial-gradient(ellipse at bottom,#1a68d3 40%,transparent 80%),radial-gradient(ellipse at 5% 340%,transparent 80%,#bfc2f4 0)">
+      <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+        <form  method="POST" action="{{ route('merchant.login') }}" class="login100-form validate-form">
+          @csrf
+          <span class="login100-form-title p-b-49">
+            Login
+          </span>
+           <x-auth-validation-errors class="mb-4 login-error" :errors="$errors" />
+
+          <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+            <span class="label-input100">Phone</span>
+            <input class="input100" type="text" name="phone" placeholder="09.....">
+            <span class="focus-input100">
+               <i class="fa fa-phone" style="padding-top: 12px !important"></i>
+            </span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Password is required">
+            <span class="label-input100">Password</span>
+            <input class="input100" type="password" name="password" placeholder="Type your password">
+            <span class="focus-input100">
+              <i class="fa fa-lock"></i>
+            </span>
+          </div>
+          
+          <div class="text-right p-t-8 p-b-31">
+            <a href="tel:09250164690">
+              Forgot password? <span>
+            </a>
+          </div>
+          
+          <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <button class="login100-form-btn">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
