@@ -1,24 +1,39 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import CircleText from "./CircleText";
 
-export const PackageCard = () => {
+export const PackageCard = (props) => {
+  const { pack } = props;
+  console.log(pack);
   return (
-    <Card className="package-card">
-      <Card.Body>
-        <div className="tag">
-          <button className="btn btn-dark px-5">POPULAR</button>
+    <NavLink to={`/checkout/${pack.id}`} className="">
+      <Card className="package-card">
+        <div className="triangle">
+          <div></div>
         </div>
-        <div className="title text-center my-4 px-5">
-          <Card.Title>10 Class Pack</Card.Title>
-          <div className="py-3">
-            <span>10</span>
+        <Card.Body>
+          <div className="tag">
+            <button className="btn btn-dark px-5 text-uppercase">
+              {pack.tag_name}
+            </button>
           </div>
+          <div className="title text-center my-4 px-5">
+            <Card.Title>{pack.pack_name}</Card.Title>
+            <CircleText text={pack.total_credit} />
+          </div>
+          <div className="text-center my-4 px-5">
+            <Card.Text className="my-3 mx-2">{pack.note}</Card.Text>
 
-          <Card.Text className="my-5 mx-2">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis.
-          </Card.Text>
-        </div>
-      </Card.Body>
-    </Card>
+            <div className="mt-5">
+              <h5 className="fw-bold">${pack.pack_price}</h5>
+              <span className="text-secondary">
+                ${pack.estimate_price} per class!
+              </span>
+            </div>
+          </div>
+        </Card.Body>
+      </Card>
+    </NavLink>
   );
 };

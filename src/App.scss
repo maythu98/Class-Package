@@ -1,4 +1,47 @@
-$title_color: #1b7a8c;
+//Color
+$primary_color: #1b7a8c;
+
+button.btn-primary {
+  background-color: $primary_color !important;
+}
+// $link-decoration: none;
+
+///BASE
+body {
+  background: rgb(215, 219, 221);
+  background: linear-gradient(
+    50deg,
+    rgba(215, 219, 221, 1) 0%,
+    rgba(234, 235, 238, 1) 28%,
+    rgba(243, 243, 247, 1) 56%,
+    rgba(213, 223, 224, 1) 86%
+  );
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+/////component
+.circle-text {
+  margin-top: 5px;
+  color: white;
+  padding: 1rem;
+  background-color: $primary_color;
+  border-radius: 50%;
+}
+// input::selection {
+//   background: white;
+// }
+input:focus,
+input:active {
+  box-shadow: none !important;
+}
 
 /* Login */
 .login {
@@ -11,25 +54,42 @@ $title_color: #1b7a8c;
     &:active {
       background-color: white;
       border: none;
-      box-shadow: none;
     }
-  }
-  input::selection {
-    background: white;
   }
 }
 
 // package card
-.package-card {
-  .title {
-    color: $title_color;
+div.package-card {
+  height: 400px;
+  //Triangle
+  .triangle {
+    position: relative;
 
-    span {
-      margin-top: 5px;
-      color: white;
-      padding: 1rem;
-      background-color: $title_color;
-      border-radius: 50%;
+    div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 100px solid #f1e5cbbd;
+      border-left: 100px solid transparent;
     }
   }
+
+  //title
+  .title {
+    color: $primary_color;
+  }
+}
+
+div.package-card {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+//// Checkout
+.checkout {
+  color: $primary_color;
 }
