@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Card, FormControl, InputGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import { PurchaseCard } from "../../components/PurchaseCard";
 import PurchaseHead from "../../components/PurchaseHead";
 import PurchaseTotal from "../../components/PurchaseTotal";
 import useAxios from "../../hooks/useAxios";
@@ -49,7 +48,6 @@ export default function Checkout() {
 
     try {
       const { data } = await api.post("/api/orders/create", body);
-      console.log(data.data);
       navigate(`/order/${data.data.id}`);
     } catch (error) {
       console.log(error);

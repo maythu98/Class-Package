@@ -5,7 +5,6 @@ import CircleText from "./CircleText";
 
 export const PackageCard = (props) => {
   const { pack } = props;
-  console.log(pack);
   return (
     <NavLink to={`/checkout/${pack.id}`} className="">
       <Card className="package-card">
